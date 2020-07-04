@@ -1,34 +1,40 @@
-var dateNow = moment().format("dddd, MMMM Do YYYY");
-console.log(dateNow);
+var dateNow = moment().format("dddd, MMMM Do YYYY  h:mm:ss A");
+// console.log(dateNow);
 $("#currentDay").text(dateNow);
+
+setInterval(() => {
+    var dateNow = moment().format("dddd, MMMM Do YYYY  h:mm:ss A");
+    // console.log(dateNow);
+    $("#currentDay").text(dateNow);
+}, 1000);
 
 // Creating To Do's
 
-// create empty array called "list"
-var tasks = [];
-
 // Current Hour
 var hour = moment().hour()
-console.log(hour);
+// console.log(hour);
 
+// Time Block Function:
+$(".time-block").each(function () {
+    // console.log($(this).attr("id"));
 
-$(".time-block").each(function (){
-    console.log($(this).attr("id"));
+    // taskHour = the value of the id (ex.hour9) parsed to an integer and split at the "r" leaving just the number of the hour remaining
     $(this).addClass("past");
     var taskHour = parseInt($(this).attr("id").split("r")[1]);
-    console.log(taskHour);
+    // console.log(taskHour);
 
-    if(taskHour === hour) {
-        $(this).addClass("present");
-    };
-    if(taskHour > hour) {
+    // if the task's hour is less than the current hour, the row is in the past, add class "past" with corresponding background color
+    if (taskHour < hour) {
         $(this).addClass("past");
     };
-    if(taskHour > hour) {
+    // if the task's hour is equal to the current hour, the row is in the present, add class "present" with corresponding background color
+    if (taskHour === hour) {
+        $(this).addClass("present");
+    };
+    // if the task's hour is greater than the current hour, the row is in the future, add class "future" with corresponding background color
+    if (taskHour > hour) {
         $(this).addClass("future");
     };
-
-
 });
 
 
@@ -39,8 +45,8 @@ $(".saveBtn").on("click", function () {
     var text = $(this).siblings(".to-do").val();
 
     //set items in local storage
-    localStorage.setItem(time,text);
-    console.log(text,time);    
+    localStorage.setItem(time, text);
+    console.log(text, time);
 
 });
 
@@ -79,4 +85,3 @@ var loadTasks = function () {
 
 loadTasks();
 
-    
