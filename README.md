@@ -21,11 +21,11 @@ A simple calendar app for scheduling your work day
 ## Website
 https://taylornyquist.github.io/work-day-scheduler/
 
-## Screen Shots
+## Screen Shots and Video
 
 <img src="./assets/images/screen-shot1.png" alt="" />
 <img src="./assets/images/screen-shot2.png" alt="" />
-<iframe src="https://drive.google.com/file/d/1c_43Wn4JL-7xlVcGkF2lBuPYSpz8BO1O/preview" width="640" height="480"></iframe>
+https://drive.google.com/file/d/1c_43Wn4JL-7xlVcGkF2lBuPYSpz8BO1O/view
 
  ## Responsiveness
 * Boostrap Grid
