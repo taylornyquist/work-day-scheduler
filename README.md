@@ -7,6 +7,7 @@ A simple calendar app for scheduling your work day
 * One hour schedule blocks from 9am until 5pm
 * Text area to enter and save tasks
 * Saved tasks persist and are reloaded upon refresh
+* Background color of each hour block changes based on future, present or past hours
 
 
 ## Built With
@@ -38,4 +39,4 @@ https://drive.google.com/file/d/1c_43Wn4JL-7xlVcGkF2lBuPYSpz8BO1O/view
 
 
 ### Contribution
-Made with ❤️ by Taylor Nyquist
+Made with ❤️  by Taylor Nyquist
