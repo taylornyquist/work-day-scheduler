@@ -1,42 +1,50 @@
+// Sets the current date and time when the page loads
 var dateNow = moment().format("dddd, MMMM Do YYYY  h:mm:ss A");
 // console.log(dateNow);
 $("#currentDay").text(dateNow);
 
+// Updates the clock every second so the seconds count up
 setInterval(() => {
     var dateNow = moment().format("dddd, MMMM Do YYYY  h:mm:ss A");
     // console.log(dateNow);
     $("#currentDay").text(dateNow);
 }, 1000);
 
-// Creating To Do's
-
 // Current Hour
 var hour = moment().hour()
 // console.log(hour);
 
 // Time Block Function:
-$(".time-block").each(function () {
-    // console.log($(this).attr("id"));
 
-    // taskHour = the value of the id (ex.hour9) parsed to an integer and split at the "r" leaving just the number of the hour remaining
-    $(this).addClass("past");
-    var taskHour = parseInt($(this).attr("id").split("r")[1]);
-    // console.log(taskHour);
+function backgroundColor() {
+    $(".time-block").each(function () {
+        // console.log($(this).attr("id"));
 
-    // if the task's hour is less than the current hour, the row is in the past, add class "past" with corresponding background color
-    if (taskHour < hour) {
+        // taskHour = the value of the id (ex.hour9) parsed to an integer and split at the "r" leaving just the number of the hour remaining
         $(this).addClass("past");
-    };
-    // if the task's hour is equal to the current hour, the row is in the present, add class "present" with corresponding background color
-    if (taskHour === hour) {
-        $(this).addClass("present");
-    };
-    // if the task's hour is greater than the current hour, the row is in the future, add class "future" with corresponding background color
-    if (taskHour > hour) {
-        $(this).addClass("future");
-    };
-});
+        var taskHour = parseInt($(this).attr("id").split("r")[1]);
+        // console.log(taskHour);
 
+        // if the task's hour is less than the current hour, the row is in the past, add class "past" with corresponding background color
+        if (taskHour < hour) {
+            $(this).addClass("past");
+        };
+        // if the task's hour is equal to the current hour, the row is in the present, add class "present" with corresponding background color
+        if (taskHour === hour) {
+            $(this).addClass("present");
+        };
+        // if the task's hour is greater than the current hour, the row is in the future, add class "future" with corresponding background color
+        if (taskHour > hour) {
+            $(this).addClass("future");
+        };
+    });
+};
+
+// Run backgroundColor function every minute to refresh background color of each hour block
+setInterval(() => {
+    backgroundColor();
+    // console.log("test");
+}, 60000);
 
 // saveBtn was clicked: store in localStorage
 $(".saveBtn").on("click", function () {
@@ -51,7 +59,7 @@ $(".saveBtn").on("click", function () {
 });
 
 
-// load saved data from localStorage with getItem, then assign it to textarea for each hour
+// Load saved data from localStorage with getItem, then assign it to textarea for each hour
 var loadTasks = function () {
 
     hour9 = localStorage.getItem("hour9");
@@ -83,5 +91,6 @@ var loadTasks = function () {
 
 };
 
+backgroundColor();
 loadTasks();
 

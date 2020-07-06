@@ -39,4 +39,4 @@ https://drive.google.com/file/d/1c_43Wn4JL-7xlVcGkF2lBuPYSpz8BO1O/view
 
 
 ### Contribution
-Made with ❤️  by Taylor Nyquist
+Made with ❤️ by Taylor Nyquist
