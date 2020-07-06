@@ -26,7 +26,7 @@ https://taylornyquist.github.io/work-day-scheduler/
 
 <img src="./assets/images/screen-shot1.png" alt="" />
 <img src="./assets/images/screen-shot2.png" alt="" />
-https://drive.google.com/file/d/1c_43Wn4JL-7xlVcGkF2lBuPYSpz8BO1O/view
+[Video of Webpage](https://drive.google.com/file/d/1c_43Wn4JL-7xlVcGkF2lBuPYSpz8BO1O/view)
 
  ## Responsiveness
 * Boostrap Grid
